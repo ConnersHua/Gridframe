@@ -7,7 +7,7 @@
 				<?php if ( has_post_thumbnail() ) : ?>
 					<?php the_post_thumbnail('gridframe-medium-h'); ?>
 				<?php else: ?>	
-					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/thumb-medium.png" alt="<?php the_title_attribute(); ?>" />
+					<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/thumb-medium.webp" alt="<?php the_title_attribute(); ?>" />
 				<?php endif; ?>
 				<?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fas fa-play"></i></span>'; ?>
 				<?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon"><i class="fas fa-volume-up"></i></span>'; ?>

@@ -1,6 +1,5 @@
-<?php $format = get_post_format(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('type-portfolio'); ?>>
 
-<div class="type-portfolio">
 	<div class="type-portfolio-inner">
 	
 		<div class="type-portfolio-thumb">
@@ -18,18 +17,21 @@
 				<a class="type-portfolio-comments" href="<?php comments_link(); ?>"><i class="fas fa-comment"></i><span><?php comments_number( '0', '1', '%' ); ?></span></a>
 			<?php endif; ?>
 		</div>
+	
+		<div class="type-portfolio-content">	
+			<?php if ( get_theme_mod( 'item-titles', 'on' ) =='on' ): ?>
+				<h3 class="type-portfolio-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+			<?php endif; ?>
+			<?php if (get_theme_mod('excerpt-length','0') != '0'): ?>
+				<div class="type-portfolio-excerpt">
+					<?php the_excerpt(); ?>
+				</div>
+			<?php endif; ?>
+			<?php if ( has_category() && ( get_theme_mod( 'item-category', 'on' ) =='on' ) ): ?>
+				<div class="type-portfolio-category"><?php the_category(' / '); ?></div>
+			<?php endif; ?>
+		</div>
+		
 	</div>
-	<div class="type-portfolio-content">	
-		<?php if ( get_theme_mod( 'item-titles', 'on' ) =='on' ): ?>
-			<h3 class="type-portfolio-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-		<?php endif; ?>
-		<?php if (get_theme_mod('excerpt-length','0') != '0'): ?>
-			<div class="type-portfolio-excerpt">
-				<?php the_excerpt(); ?>
-			</div>
-		<?php endif; ?>
-		<?php if ( has_category() && ( get_theme_mod( 'item-category', 'on' ) =='on' ) ): ?>
-			<div class="type-portfolio-category"><?php the_category(' / '); ?></div>
-		<?php endif; ?>
-	</div>
-</div>
+	
+</article>

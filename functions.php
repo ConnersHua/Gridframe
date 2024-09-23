@@ -361,7 +361,7 @@ if ( ! function_exists( 'gridframe_social_links' ) ) {
 					if ( isset($item['social-target']) && !empty($item['social-target']) ) 
 						{ $target = 'target="_blank"'; } else $target = '';
 					if ( isset($item['social-icon']) && !empty($item['social-icon']) ) 
-						{ $icon = 'class="fab ' .esc_attr( $item['social-icon'] ). '"'; } else $icon = '';
+						{ $icon = 'class="' .esc_attr( $item['social-icon'] ). '"'; } else $icon = '';
 					if ( isset($item['social-color']) && !empty($item['social-color']) ) 
 						{ $color = 'style="color: ' .esc_attr( $item['social-color'] ). ';"'; } else $color = '';
 					
